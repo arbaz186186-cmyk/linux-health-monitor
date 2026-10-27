@@ -31,6 +31,12 @@ else
     echo "HEALTHY: Disk usage is normal."
 fi
 
+if [ "$DISK_USAGE" -ge 80 ]; then
+    echo "WARNING: Disk usage is high!"
+    echo "$(date '+%F %T') WARNING: Disk usage is ${DISK_USAGE}%" >> /home/adminarbaz186/linux-health-monitor/health_alerts.log
+else
+    echo "HEALTHY: Disk usage is normal."
+fi
 echo ""
 echo "RAM HEALTH STATUS:"
 
@@ -42,6 +48,12 @@ else
     echo "HEALTHY: RAM usage is normal."
 fi
 
+if [ "$RAM_USAGE" -ge 80 ]; then
+    echo "WARNING: RAM usage is high!"
+    echo "$(date '+%F %T') WARNING: RAM usage is ${RAM_USAGE}%" >> /home/adminarbaz186/linux-health-monitor/health_alerts.log
+else
+    echo "HEALTHY: RAM usage is normal."
+fi
 echo ""
 echo "CPU LOAD STATUS:"
 uptime
