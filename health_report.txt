@@ -1,0 +1,33 @@
+================================
+   LINUX SERVER HEALTH REPORT
+================================
+
+DATE AND TIME:
+Tue Oct 27 14:39:05 UTC 2026
+
+DISK USAGE:
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sdd       1007G   11G  946G   2% /
+
+MEMORY USAGE:
+               total        used        free      shared  buff/cache   available
+Mem:           3.7Gi       1.0Gi       2.6Gi       4.4Mi       279Mi       2.7Gi
+Swap:          1.0Gi          0B       1.0Gi
+
+CPU INFORMATION:
+CPU(s):                                  8
+Model name:                              Intel(R) Core(TM) i5-8265U CPU @ 1.60GHz
+
+DISK HEALTH STATUS:
+HEALTHY: Disk usage is normal.
+
+RAM HEALTH STATUS:
+HEALTHY: RAM usage is normal.
+
+CPU LOAD STATUS:
+ 14:39:05 up 50 min,  1 user,  load average: 0.25, 0.09, 0.04
+
+================================
+OVERALL SERVER HEALTH
+================================
+SERVER STATUS: HEALTHY
