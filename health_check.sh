@@ -1,3 +1,4 @@
+
 #!/bin/bash
 
 echo "================================"
@@ -20,16 +21,11 @@ echo ""
 echo "CPU INFORMATION:"
 lscpu | grep -E '^Model name|^CPU\(s\):'
 
-echo ""
-echo "DISK HEALTH STATUS:"
-
+# Disk usage check
 DISK_USAGE=$(df / | awk 'NR==2 {print $5}' | tr -d '%')
 
-if [ "$DISK_USAGE" -ge 80 ]; then
-    echo "WARNING: Disk usage is high!"
-else
-    echo "HEALTHY: Disk usage is normal."
-fi
+echo ""
+echo "DISK HEALTH STATUS:"
 
 if [ "$DISK_USAGE" -ge 80 ]; then
     echo "WARNING: Disk usage is high!"
@@ -37,16 +33,12 @@ if [ "$DISK_USAGE" -ge 80 ]; then
 else
     echo "HEALTHY: Disk usage is normal."
 fi
-echo ""
-echo "RAM HEALTH STATUS:"
 
+# RAM usage check
 RAM_USAGE=$(free | awk '/Mem:/ {printf "%.0f", $3/$2 * 100}')
 
-if [ "$RAM_USAGE" -ge 80 ]; then
-    echo "WARNING: RAM usage is high!"
-else
-    echo "HEALTHY: RAM usage is normal."
-fi
+echo ""
+echo "RAM HEALTH STATUS:"
 
 if [ "$RAM_USAGE" -ge 80 ]; then
     echo "WARNING: RAM usage is high!"
@@ -54,6 +46,7 @@ if [ "$RAM_USAGE" -ge 80 ]; then
 else
     echo "HEALTHY: RAM usage is normal."
 fi
+
 echo ""
 echo "CPU LOAD STATUS:"
 uptime
